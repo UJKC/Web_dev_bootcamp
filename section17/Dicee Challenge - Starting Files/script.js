@@ -4,9 +4,10 @@ randomnumber1 = Math.floor(Math.random() * 6) + 1;
 console.log(randomnumber1);
 var randomnumber2 = Math.floor(Math.random() * 6) + 1;
 console.log(randomnumber2);
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     // Get the element with the class 'img1'
     var img1Element = document.querySelector('.img1');
+    var winnerElement = document.querySelector('.container h1');
   
     // Check if the element with class 'img1' exists
     if (img1Element) {
@@ -25,5 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.error('No element found with the class "img1"');
     }
+
+    if (randomnumber1 > randomnumber2) {
+        winnerElement.textContent = "Player 1 is the winner";
+    } else if (randomnumber2 > randomnumber1) {
+        winnerElement.textContent = "Player 2 is the winner";
+    } else if (randomnumber1 === randomnumber2) {
+        winnerElement.textContent = "It's a draw";
+    } else {
+        console.error('No element found with the class "container" and the class "refresh-me"');
+    }
+    
 });
   
