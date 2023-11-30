@@ -15,5 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       console.error('No element found with the class "img1"');
     }
-  });
+
+    var img2Element = document.querySelector('.img2');
+  
+    // Check if the element with class 'img1' exists
+    if (img2Element) {
+      // Set the src attribute of the element with class 'img1'
+      img2Element.setAttribute('src', `./images/dice${randomnumber2}.png`);
+    } else {
+      console.error('No element found with the class "img1"');
+    }
+});
   
